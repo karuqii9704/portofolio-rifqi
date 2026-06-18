@@ -1,0 +1,13 @@
+# Vercel
+.vercel
+
+# Claude Code / internal dev artifacts (keep out of public repo)
+.claude
+claude-vault/
+docs/
+CLAUDE.md
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.log

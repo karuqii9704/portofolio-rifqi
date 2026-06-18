@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0e1316" />
+
+  <!-- Set theme before first paint to avoid flash-of-incorrect-theme (FOUC).
+       Returning light-mode visitors otherwise see a dark flash because main.js
+       is deferred and only swaps the theme after the first paint. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme") ||
+                (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", t);
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute("content", t === "light" ? "#f3f1ea" : "#0e1316");
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>Rifqi Sigwan Nugraha — Data Scientist & AI Engineer</title>
+  <meta name="description" content="Rifqi Sigwan Nugraha — Data Scientist, AI & Backend Engineer. Telkom University graduate, Bank Indonesia Scholar, and IEEE-published researcher building data pipelines, ML systems, and IoT-powered platforms." />
+  <meta name="author" content="Rifqi Sigwan Nugraha" />
+
+  <link rel="canonical" href="https://portofolio-rifqi-rho.vercel.app/" />
+
+  <meta property="og:title" content="Rifqi Sigwan Nugraha — Data Scientist & AI Engineer" />
+  <meta property="og:description" content="Data Scientist · AI & Backend Engineer · IEEE-published. Turning complex data into calm, useful systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://portofolio-rifqi-rho.vercel.app/" />
+  <meta property="og:image" content="https://portofolio-rifqi-rho.vercel.app/assets/img/profile-square.jpg" />
+  <meta property="og:image:alt" content="Portrait of Rifqi Sigwan Nugraha" />
+  <meta property="og:site_name" content="Rifqi Sigwan Nugraha" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rifqi Sigwan Nugraha — Data Scientist & AI Engineer" />
+  <meta name="twitter:description" content="Data Scientist · AI & Backend Engineer · IEEE-published. Turning complex data into calm, useful systems." />
+  <meta name="twitter:image" content="https://portofolio-rifqi-rho.vercel.app/assets/img/profile-square.jpg" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia,serif'>R</text></svg>" />
+
+  <!-- Structured data — helps search engines surface a richer result. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rifqi Sigwan Nugraha",
+    "url": "https://portofolio-rifqi-rho.vercel.app/",
+    "image": "https://portofolio-rifqi-rho.vercel.app/assets/img/profile-square.jpg",
+    "jobTitle": "Data Scientist & AI / Backend Engineer",
+    "email": "rifqisigwannugraha@gmail.com",
+    "telephone": "+62-822-4632-6670",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Telkom University"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bandung",
+      "addressCountry": "ID"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/rifqi-sigwan-nugraha",
+      "https://instagram.com/rfqsn_",
+      "https://ieeexplore.ieee.org/document/11295988"
+    ],
+    "knowsAbout": ["Data Science", "Machine Learning", "Backend Engineering", "IoT", "Embedded Systems", "Generative AI"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Hero portrait is the LCP element — fetch it early at high priority. -->
+  <link rel="preload" as="image" href="assets/img/profile.jpg" fetchpriority="high" />
+
+  <link rel="stylesheet" href="assets/css/styles.css?v=6" />
+</head>
+<body>
+  <a href="#top" class="skip-link">Skip to content</a>
+
+  <!-- ambient background layers -->
+  <div class="bg-mist" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+    <div class="grain"></div>
+  </div>
+
+  <!-- progress bar -->
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="wordmark" aria-label="Home">
+      <span class="wordmark-mark">R</span>
+      <span class="wordmark-text">Rifqi&nbsp;<span class="thin">Sigwan&nbsp;Nugraha</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-controls">
+      <button class="ctrl" id="musicToggle" aria-pressed="false" aria-label="Toggle ambient music" title="Ambient music">
+        <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      </button>
+      <button class="ctrl" id="themeToggle" aria-label="Toggle light / dark theme" title="Toggle theme">
+        <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g class="rays"><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.2" y2="6.2"/><line x1="17.8" y1="17.8" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.2" y2="17.8"/><line x1="17.8" y1="6.2" x2="19.6" y2="4.4"/></g></svg>
+        <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a0.5 0.5 0 0 0-.7-.6A9 9 0 1 0 20.6 15.2a0.5 0.5 0 0 0-.6-.7z"/></svg>
+      </button>
+      <button class="ctrl nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks" title="Menu">
+        <span class="burger" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <p class="kicker"><span class="dot"></span>Data Scientist · AI &amp; Backend Engineer</p>
+          <h1 class="hero-title">
+            Turning complex&nbsp;data
+            <span class="accent-line">into calm, <em>useful</em> systems.</span>
+          </h1>
+          <p class="hero-lead">
+            I’m <strong>Rifqi Sigwan Nugraha</strong> — an Information Technology graduate from
+            Telkom University, Bank Indonesia Scholar, and <strong>IEEE-published</strong> researcher.
+            I architect data pipelines, integrate machine-learning models, and build scalable
+            AI &amp; IoT-powered platforms.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Work</a>
+            <a href="assets/Rifqi-Sigwan-Nugraha-CV.pdf" class="btn btn-ghost" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+              Download CV
+            </a>
+          </div>
+          <ul class="hero-socials" aria-label="Social links">
+            <li><a href="mailto:rifqisigwannugraha@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/rifqi-sigwan-nugraha" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://instagram.com/rfqsn_" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+
+        <div class="hero-portrait reveal" data-delay="120">
+          <div class="portrait-frame">
+            <img src="assets/img/profile.jpg" alt="Portrait of Rifqi Sigwan Nugraha standing before a misty mountain" width="1200" height="1600" fetchpriority="high" decoding="async" />
+            <div class="portrait-glow" aria-hidden="true"></div>
+          </div>
+          <div class="portrait-tag">
+            <span class="loc">Bandung · Indonesia</span>
+            <span class="status"><i></i>Open to opportunities</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to about">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT / STATS ============ -->
+    <section class="section about" id="about">
+      <div class="section-head reveal">
+        <span class="sec-index">01</span>
+        <h2 class="sec-title">About</h2>
+      </div>
+      <div class="about-grid">
+        <p class="about-text reveal">
+          Results-driven technologist with a strong foundation in <em>data science, artificial
+          intelligence, and embedded/IoT engineering</em>. I’ve shipped everything from
+          intelligent video-analytics backends to IoT systems serving real communities —
+          leaning on Python and PostgreSQL to translate messy data into clear, actionable insight.
+          I care about systems that are robust under the hood and quiet on the surface, and I
+          enjoy working across design, engineering, and strategy to ship things that matter.
+        </p>
+        <ul class="stats reveal" data-delay="100">
+          <li><span class="num"><span data-count="3.8" data-decimals="2">0</span><small>/4.00</small></span><span class="lbl">GPA · B.Eng IT</span></li>
+          <li><span class="num">~<span data-count="300">0</span></span><span class="lbl">Households impacted by IoT</span></li>
+          <li><span class="num"><span data-count="7">0</span></span><span class="lbl">Leadership roles held</span></li>
+          <li><span class="num"><span data-count="1">0</span>×</span><span class="lbl">Innovillage National Finalist</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ EXPERTISE ============ -->
+    <section class="section expertise" id="expertise">
+      <div class="section-head reveal">
+        <span class="sec-index">02</span>
+        <h2 class="sec-title">What I Do Best</h2>
+      </div>
+      <p class="section-lead reveal">
+        Three areas where engineering depth and curiosity meet — from sensors in the field to
+        models in the cloud.
+      </p>
+      <div class="pillar-grid">
+        <article class="pillar reveal">
+          <div class="pillar-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+          </div>
+          <h3>IoT &amp; Embedded Systems</h3>
+          <p>Hands-on with embedded experimentation, sensor data acquisition, and system evaluation. Built IoT water-clarity monitoring and flood-detection deployed in the field.</p>
+          <ul class="bars">
+            <li><span class="bl">Sensor Integration</span><span class="bv">85%</span><span class="bar"><i style="--lvl:85%"></i></span></li>
+            <li><span class="bl">Microcontroller · ESP32 / Arduino</span><span class="bv">80%</span><span class="bar"><i style="--lvl:80%"></i></span></li>
+            <li><span class="bl">Embedded C / C++</span><span class="bv">75%</span><span class="bar"><i style="--lvl:75%"></i></span></li>
+          </ul>
+        </article>
+
+        <article class="pillar reveal" data-delay="90">
+          <div class="pillar-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3M14 6l-4 12"/></svg>
+          </div>
+          <h3>Web &amp; Backend Development</h3>
+          <p>Backend services, RESTful APIs, and data pipelines in Python. Full-stack work with Next.js &amp; PostgreSQL, plus admin platforms for real operational workflows.</p>
+          <ul class="bars">
+            <li><span class="bl">Python · Data Pipelines</span><span class="bv">85%</span><span class="bar"><i style="--lvl:85%"></i></span></li>
+            <li><span class="bl">React / Next.js</span><span class="bv">82%</span><span class="bar"><i style="--lvl:82%"></i></span></li>
+            <li><span class="bl">Node.js / API Design</span><span class="bv">72%</span><span class="bar"><i style="--lvl:72%"></i></span></li>
+          </ul>
+        </article>
+
+        <article class="pillar reveal" data-delay="180">
+          <div class="pillar-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+          </div>
+          <h3>AI &amp; Cloud Computing</h3>
+          <p>Machine-learning integration and synthetic-data generation for smart agriculture (IEEE-published). Certified in Generative AI by Google; exploring cloud-native AI solutions.</p>
+          <ul class="bars">
+            <li><span class="bl">Data Analysis · Python</span><span class="bv">78%</span><span class="bar"><i style="--lvl:78%"></i></span></li>
+            <li><span class="bl">Generative AI</span><span class="bv">72%</span><span class="bar"><i style="--lvl:72%"></i></span></li>
+            <li><span class="bl">Cloud Fundamentals · GCP</span><span class="bv">65%</span><span class="bar"><i style="--lvl:65%"></i></span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section experience" id="experience">
+      <div class="section-head reveal">
+        <span class="sec-index">03</span>
+        <h2 class="sec-title">Experience</h2>
+      </div>
+      <ol class="timeline">
+        <li class="tl-item reveal">
+          <div class="tl-when">2025 — Present</div>
+          <div class="tl-body">
+            <h3>Co-Founder <span class="at">· Plus The Site</span></h3>
+            <p>Directed end-to-end digital-platform development, aligning the product roadmap with
+              market needs and synchronizing design, development, and marketing workstreams.
+              Selected for the <strong>SIAP 2025 Acceleration Program</strong> by Kementerian Ekonomi Kreatif.</p>
+          </div>
+        </li>
+        <li class="tl-item reveal">
+          <div class="tl-when">Sep 2024 — Jan 2026</div>
+          <div class="tl-body">
+            <h3>Research Assistant <span class="at">· Hardware &amp; Embedded System Lab, Telkom University</span></h3>
+            <p>Supported research across Embedded Systems, AI, and IoT — sensor data acquisition,
+              experimental validation, and technical documentation. Led end-to-end IoT deployment
+              for water-monitoring and flood-detection impacting <strong>~300 households</strong>, and
+              redesigned a BUMDes–PDAM administrative workflow into a user-centered web platform.</p>
+          </div>
+        </li>
+        <li class="tl-item reveal">
+          <div class="tl-when">Jul 2025 — Aug 2025</div>
+          <div class="tl-body">
+            <h3>Backend Engineer Intern <span class="at">· AI Surveillance Dashboard</span></h3>
+            <p>Built backend services, robust data pipelines, and RESTful API endpoints for an AI
+              surveillance dashboard. Coordinated cross-functional teams and monitored performance
+              metrics to keep uptime steady through deployment.</p>
+          </div>
+        </li>
+        <li class="tl-item reveal">
+          <div class="tl-when">2024 — 2025</div>
+          <div class="tl-body">
+            <h3>Unit Head / Dorm Manager <span class="at">· DKM Syamsul ’Ulum</span></h3>
+            <p>Managed the daily operations and welfare of mosque-dormitory residents — coordinating
+              duty rosters, maintaining stakeholder relations, and keeping a large community running smoothly.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ CURRENTLY BUILDING ============ -->
+    <section class="section building" id="building">
+      <div class="section-head reveal">
+        <span class="sec-index">04</span>
+        <h2 class="sec-title">Currently Building</h2>
+      </div>
+      <div class="showcase reveal">
+        <div class="showcase-imgs left" aria-hidden="true">
+          <figure class="ph ph-a"><img src="assets/img/plus-1.jpg" alt="" loading="lazy" /></figure>
+          <figure class="ph ph-b"><img src="assets/img/plus-2.jpg" alt="" loading="lazy" /></figure>
+        </div>
+
+        <div class="showcase-body">
+          <span class="plus-chip"><img class="plus-logo" src="assets/img/plus-logo.png" alt="Plus The Site" width="1125" height="493" /></span>
+          <span class="badge"><span class="badge-dot"></span>SIAP 2025 · Kemenekraf</span>
+          <h3>Plus The Site</h3>
+          <p>A digital-platform startup selected for the <strong>SIAP 2025 Acceleration Program</strong>
+            by Kementerian Ekonomi Kreatif. As co-founder, I direct end-to-end platform development —
+            aligning the product roadmap with market needs and synchronizing design, engineering, and
+            marketing into one rhythm.</p>
+          <ul class="showcase-stats">
+            <li><span>Co-Founder</span>Strategy &amp; Product</li>
+            <li><span>Full-Stack</span>Build &amp; Ship</li>
+            <li><span>SIAP&nbsp;’25</span>Accelerated</li>
+          </ul>
+          <a href="https://www.plusthe.site" target="_blank" rel="noopener" class="btn btn-ghost">
+            Visit plusthe.site
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+
+        <div class="showcase-imgs right" aria-hidden="true">
+          <figure class="ph ph-c"><img src="assets/img/plus-3.jpg" alt="" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section projects" id="projects">
+      <div class="section-head reveal">
+        <span class="sec-index">05</span>
+        <h2 class="sec-title">Selected Projects</h2>
+      </div>
+      <div class="project-grid">
+        <article class="card reveal">
+          <header><h3>Qoffea — AyoBerAKSI 2025</h3><span class="when">Sep–Nov 2025</span></header>
+          <p>Backend engineer for an AI coffee-assessment platform (qoffea.cloud) by PT Telkom Indonesia. <strong>Top 50 national finalist.</strong></p>
+          <ul class="tags"><li>Python</li><li>AI</li><li>Backend</li></ul>
+        </article>
+
+        <article class="card reveal" data-delay="60">
+          <header><h3>AI Surveillance Dashboard</h3><span class="when">Jul–Aug 2025</span></header>
+          <p>Backend for an AI surveillance system supporting real-time video analytics and alert pipelines.</p>
+          <ul class="tags"><li>Python</li><li>Data Pipelines</li><li>REST API</li></ul>
+        </article>
+
+        <article class="card reveal" data-delay="120">
+          <header><h3>Dashboard MSU</h3><span class="when">Nov 2025–Jan 2026</span></header>
+          <p>Full-stack dashboard ecosystem for a mosque &amp; university, architected around a centralized admin control page.</p>
+          <ul class="tags"><li>Next.js</li><li>PostgreSQL</li></ul>
+        </article>
+
+        <article class="card reveal">
+          <header><h3>Rewana — Innovillage</h3><span class="when">Oct 2023–Feb 2024</span></header>
+          <p>IoT flood early-warning &amp; water-clarity monitoring deployed in Desa Mukai Tengah, Kerinci. Top 163 National Finalist, ~300 households served.</p>
+          <ul class="tags"><li>C++</li><li>IoT / HES</li><li>PHP</li></ul>
+        </article>
+
+        <article class="card reveal" data-delay="60">
+          <header><h3>BUMDes–PDAM Platform</h3><span class="when">2024–2025</span></header>
+          <p>User-centered admin web platform digitizing water-payment management and BUMDes operational workflows.</p>
+          <ul class="tags"><li>Web</li><li>Admin System</li></ul>
+        </article>
+
+        <article class="card reveal" data-delay="120">
+          <header><h3>Tel-U Great Planner</h3><span class="when">Jun 2025</span></header>
+          <p>Academic-planning app with GPA computation and predictive grade projections. Registered copyright (No. 000925616).</p>
+          <ul class="tags"><li>Algorithms</li><li>Copyright ©</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATION / RESEARCH ============ -->
+    <section class="section research" id="research">
+      <div class="section-head reveal">
+        <span class="sec-index">06</span>
+        <h2 class="sec-title">Research</h2>
+      </div>
+      <article class="paper reveal">
+        <div class="paper-top">
+          <span class="badge accent2"><span class="badge-dot"></span>IEEE Published · 2025</span>
+          <span class="paper-meta">Peer-Reviewed · IEEE Conference</span>
+        </div>
+        <h3 class="paper-title">
+          Comparative Analysis of <em>Gaussian Mixture Model</em> and <em>Monte Carlo</em> in
+          Synthetic Data Generation for Durian Cultivation Based on Smart-Farming IoT
+        </h3>
+        <blockquote class="paper-abstract">
+          <span class="ab-label">Abstract</span>
+          A Monte Carlo-based synthetic-data framework for durian cultivation within a smart-farming
+          IoT ecosystem. By simulating environmental variables and crop-growth patterns, it tackles
+          the scarcity of real-world agricultural datasets in tropical regions — integrating IoT
+          sensor data with stochastic modeling to produce high-quality synthetic datasets for
+          training precision-agriculture ML models.
+        </blockquote>
+        <ul class="paper-highlights">
+          <li><span>GMM + Monte Carlo</span>Dual-method analysis</li>
+          <li><span>Smart Farming</span>IoT application</li>
+          <li><span>Synthetic Data</span>AI / ML training</li>
+        </ul>
+        <a href="https://ieeexplore.ieee.org/document/11295988" target="_blank" rel="noopener" class="btn btn-primary">
+          View on IEEE Xplore
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="ic"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </article>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section skills" id="skills">
+      <div class="section-head reveal">
+        <span class="sec-index">07</span>
+        <h2 class="sec-title">Skills &amp; Tools</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-col reveal">
+          <h3>Technical &amp; Development</h3>
+          <ul class="chips">
+            <li>Python</li><li>SQL · PostgreSQL</li><li>Machine Learning</li>
+            <li>Data Pipelines</li><li>AI &amp; IoT Systems</li><li>C++</li>
+            <li>Next.js</li><li>PHP</li><li>Golang</li><li>Embedded Systems</li>
+          </ul>
+        </div>
+        <div class="skill-col reveal" data-delay="90">
+          <h3>Management &amp; Strategy</h3>
+          <ul class="chips">
+            <li>Business Development</li><li>Project Management</li><li>External Relations</li>
+            <li>Leadership</li><li>Agile / Sprint Planning</li><li>Public Relations</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION & HONORS ============ -->
+    <section class="section edu" id="education">
+      <div class="section-head reveal">
+        <span class="sec-index">08</span>
+        <h2 class="sec-title">Education &amp; Honors</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-col reveal">
+          <div class="edu-item">
+            <h3>Universitas Telkom</h3>
+            <span class="edu-meta">B.Eng Information Technology · GPA 3.80/4.00 · Sep 2022 – Jan 2026</span>
+            <p>Bank Indonesia Scholarship Awardee (2024–2026) · Innovillage National Finalist (2023) · Gemastik 2025 participant.</p>
+          </div>
+          <div class="edu-item">
+            <h3>MAN Insan Cendekia Jambi</h3>
+            <span class="edu-meta">Natural Science · Final Grade 93.00/100</span>
+            <p>Provincial Finalist — National Science Olympiad (Astronomy).</p>
+          </div>
+          <h3 class="awards-h">Certifications</h3>
+          <ul class="awards">
+            <li><span>2025</span>Computer Program Copyright — “Tel-U Great Planner” (Reg. 000925616), Ministry of Law RI</li>
+            <li><span>2024</span>BNSP Digital Marketing Certification</li>
+            <li><span>—</span>Introduction to Generative AI — Google</li>
+          </ul>
+        </div>
+        <div class="edu-col reveal" data-delay="90">
+          <h3 class="awards-h">Awards &amp; Recognition</h3>
+          <ul class="honors">
+            <li>
+              <div class="hn-head"><h4>Bank Indonesia Scholarship</h4><span>2024–26</span></div>
+              <p>National academic-excellence &amp; leadership scholarship — one of Indonesia’s most competitive.</p>
+            </li>
+            <li>
+              <div class="hn-head"><h4>Innovillage Finalist</h4><span>2023</span></div>
+              <p>Top 163 National Finalist for IoT water-monitoring &amp; flood detection in Kerinci, Jambi (~300 households served).</p>
+            </li>
+            <li>
+              <div class="hn-head"><h4>Top 50 — AyoBerAKSI 2025</h4><span>2025</span></div>
+              <p>National finalist for Qoffea, an IoT + AI coffee quality-assessment innovation.</p>
+            </li>
+            <li>
+              <div class="hn-head"><h4>National Science Olympiad</h4><span>2021</span></div>
+              <p>Provincial finalist in Astronomy (KSN) — strong analytical &amp; scientific aptitude.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LEADERSHIP ============ -->
+    <section class="section leadership" id="leadership">
+      <div class="section-head reveal">
+        <span class="sec-index">09</span>
+        <h2 class="sec-title">Organizational Leadership</h2>
+      </div>
+      <ul class="org-grid">
+        <li class="org reveal"><div class="org-when">2025–2026</div><h3>External Coordinator</h3><span>Hardware &amp; Embedded System Lab</span></li>
+        <li class="org reveal" data-delay="50"><div class="org-when">2025–2026</div><h3>Advisory Board</h3><span>GenBI · Generasi Baru Indonesia</span></li>
+        <li class="org reveal" data-delay="100"><div class="org-when">2024–2025</div><h3>Public Relations Staff</h3><span>GenBI · Generasi Baru Indonesia</span></li>
+        <li class="org reveal"><div class="org-when">2024–2025</div><h3>Unit Head</h3><span>Unit Asrama Masjid Syamsul ’Ulum</span></li>
+        <li class="org reveal" data-delay="50"><div class="org-when">Jul–Sep 2024</div><h3>Chief Officer</h3><span>PMB I-FEST · Al-Fath</span></li>
+        <li class="org reveal" data-delay="100"><div class="org-when">2023–2024</div><h3>Head of Ramadhan Dept.</h3><span>PRADA 1445 H · DKM Syamsul ’Ulum</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="contact-inner reveal">
+        <span class="sec-index">10</span>
+        <h2 class="contact-title">Let’s build something <em>thoughtful</em>.</h2>
+        <p class="contact-lead">Open to data science, AI, and backend roles — and to collaborations that turn data into real-world impact.</p>
+        <a href="mailto:rifqisigwannugraha@gmail.com" class="btn btn-primary big">rifqisigwannugraha@gmail.com</a>
+        <ul class="contact-links">
+          <li><a href="tel:+6282246326670">+62 822 4632 6670</a></li>
+          <li><a href="https://www.linkedin.com/in/rifqi-sigwan-nugraha" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://instagram.com/rfqsn_" target="_blank" rel="noopener">@rfqsn_</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> Rifqi Sigwan Nugraha</span>
+    <span class="foot-note">Designed &amp; built with care · Bandung, ID</span>
+  </footer>
+
+  <script src="assets/js/morph-bg.js?v=6" defer></script>
+  <script src="assets/js/music.js?v=6" defer></script>
+  <script src="assets/js/main.js?v=6" defer></script>
+</body>
+</html>

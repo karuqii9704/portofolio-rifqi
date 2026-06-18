@@ -1,0 +1,10 @@
+# Vercel uses this file instead of .gitignore when present.
+# Keep internal/dev artifacts out of the public deployment.
+
+.vercel
+.claude
+claude-vault
+docs
+CLAUDE.md
+README.md
+.gitignore
