@@ -1,0 +1,413 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#top"
+  - banner [ref=e4]:
+    - link "Home" [ref=e5] [cursor=pointer]:
+      - /url: "#top"
+      - generic [ref=e6]: R
+      - generic [ref=e7]: Rifqi Sigwan Nugraha
+    - navigation "Primary" [ref=e8]:
+      - link "About" [ref=e9] [cursor=pointer]:
+        - /url: "#about"
+      - link "Expertise" [ref=e10] [cursor=pointer]:
+        - /url: "#expertise"
+      - link "Experience" [ref=e11] [cursor=pointer]:
+        - /url: "#experience"
+      - link "Projects" [ref=e12] [cursor=pointer]:
+        - /url: "#projects"
+      - link "Research" [ref=e13] [cursor=pointer]:
+        - /url: "#research"
+      - link "Contact" [ref=e14] [cursor=pointer]:
+        - /url: "#contact"
+    - generic [ref=e15]:
+      - button "Toggle ambient music" [ref=e16] [cursor=pointer]
+      - button "Toggle light / dark theme" [ref=e22] [cursor=pointer]:
+        - img [ref=e23]
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - generic [ref=e28]:
+          - paragraph [ref=e29]: Data Scientist · AI & Backend Engineer
+          - heading "Turning complex data into calm, useful systems." [level=1] [ref=e31]:
+            - text: Turning complex data
+            - generic [ref=e32]:
+              - text: into calm,
+              - emphasis [ref=e33]: useful
+              - text: systems.
+          - paragraph [ref=e34]:
+            - text: I’m
+            - strong [ref=e35]: Rifqi Sigwan Nugraha
+            - text: — an Information Technology graduate from Telkom University, Bank Indonesia Scholar, and
+            - strong [ref=e36]: IEEE-published
+            - text: researcher. I architect data pipelines, integrate machine-learning models, and build scalable AI & IoT-powered platforms.
+          - generic [ref=e37]:
+            - link "View Work" [ref=e38] [cursor=pointer]:
+              - /url: "#projects"
+            - link "Download CV" [ref=e39] [cursor=pointer]:
+              - /url: assets/Rifqi-Sigwan-Nugraha-CV.pdf
+              - img [ref=e40]
+              - text: Download CV
+          - list "Social links" [ref=e42]:
+            - listitem [ref=e43]:
+              - link "Email↗" [ref=e44] [cursor=pointer]:
+                - /url: mailto:rifqisigwannugraha@gmail.com
+            - listitem [ref=e45]:
+              - link "LinkedIn↗" [ref=e46] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/rifqi-sigwan-nugraha
+            - listitem [ref=e47]:
+              - link "Instagram↗" [ref=e48] [cursor=pointer]:
+                - /url: https://instagram.com/rfqsn_
+        - generic [ref=e49]:
+          - img "Portrait of Rifqi Sigwan Nugraha standing before a misty mountain" [ref=e51]
+          - generic [ref=e52]:
+            - generic [ref=e53]: Bandung · Indonesia
+            - generic [ref=e54]: Open to opportunities
+      - link "Scroll to about" [ref=e56] [cursor=pointer]:
+        - /url: "#about"
+    - generic [ref=e58]:
+      - generic [ref=e59]:
+        - generic [ref=e60]: "01"
+        - heading "About" [level=2] [ref=e61]
+      - generic [ref=e62]:
+        - paragraph [ref=e63]:
+          - text: Results-driven technologist with a strong foundation in
+          - emphasis [ref=e64]: data science, artificial intelligence, and embedded/IoT engineering
+          - text: . I’ve shipped everything from intelligent video-analytics backends to IoT systems serving real communities — leaning on Python and PostgreSQL to translate messy data into clear, actionable insight. I care about systems that are robust under the hood and quiet on the surface, and I enjoy working across design, engineering, and strategy to ship things that matter.
+        - list [ref=e65]:
+          - listitem [ref=e66]:
+            - generic [ref=e67]: 0/4.00
+            - generic [ref=e68]: GPA · B.Eng IT
+          - listitem [ref=e69]:
+            - generic [ref=e70]: ~0
+            - generic [ref=e71]: Households impacted by IoT
+          - listitem [ref=e72]:
+            - generic [ref=e73]: "0"
+            - generic [ref=e74]: Leadership roles held
+          - listitem [ref=e75]:
+            - generic [ref=e76]: 0×
+            - generic [ref=e77]: Innovillage National Finalist
+    - generic [ref=e78]:
+      - generic [ref=e79]:
+        - generic [ref=e80]: "02"
+        - heading "What I Do Best" [level=2] [ref=e81]
+      - paragraph [ref=e82]: Three areas where engineering depth and curiosity meet — from sensors in the field to models in the cloud.
+      - generic [ref=e83]:
+        - article [ref=e84]:
+          - img [ref=e86]
+          - heading "IoT & Embedded Systems" [level=3] [ref=e90]
+          - paragraph [ref=e91]: Hands-on with embedded experimentation, sensor data acquisition, and system evaluation. Built IoT water-clarity monitoring and flood-detection deployed in the field.
+          - list [ref=e92]:
+            - listitem [ref=e93]:
+              - generic [ref=e94]: Sensor Integration
+              - generic [ref=e95]: 85%
+            - listitem [ref=e97]:
+              - generic [ref=e98]: Microcontroller · ESP32 / Arduino
+              - generic [ref=e99]: 80%
+            - listitem [ref=e101]:
+              - generic [ref=e102]: Embedded C / C++
+              - generic [ref=e103]: 75%
+        - article [ref=e105]:
+          - img [ref=e107]
+          - heading "Web & Backend Development" [level=3] [ref=e109]
+          - paragraph [ref=e110]: Backend services, RESTful APIs, and data pipelines in Python. Full-stack work with Next.js & PostgreSQL, plus admin platforms for real operational workflows.
+          - list [ref=e111]:
+            - listitem [ref=e112]:
+              - generic [ref=e113]: Python · Data Pipelines
+              - generic [ref=e114]: 85%
+            - listitem [ref=e116]:
+              - generic [ref=e117]: React / Next.js
+              - generic [ref=e118]: 82%
+            - listitem [ref=e120]:
+              - generic [ref=e121]: Node.js / API Design
+              - generic [ref=e122]: 72%
+        - article [ref=e124]:
+          - img [ref=e126]
+          - heading "AI & Cloud Computing" [level=3] [ref=e129]
+          - paragraph [ref=e130]: Machine-learning integration and synthetic-data generation for smart agriculture (IEEE-published). Certified in Generative AI by Google; exploring cloud-native AI solutions.
+          - list [ref=e131]:
+            - listitem [ref=e132]:
+              - generic [ref=e133]: Data Analysis · Python
+              - generic [ref=e134]: 78%
+            - listitem [ref=e136]:
+              - generic [ref=e137]: Generative AI
+              - generic [ref=e138]: 72%
+            - listitem [ref=e140]:
+              - generic [ref=e141]: Cloud Fundamentals · GCP
+              - generic [ref=e142]: 65%
+    - generic [ref=e144]:
+      - generic [ref=e145]:
+        - generic [ref=e146]: "03"
+        - heading "Experience" [level=2] [ref=e147]
+      - list [ref=e148]:
+        - listitem [ref=e149]:
+          - generic [ref=e150]: 2025 — Present
+          - generic [ref=e151]:
+            - heading "Co-Founder · Plus The Site" [level=3] [ref=e152]
+            - paragraph [ref=e153]:
+              - text: Directed end-to-end digital-platform development, aligning the product roadmap with market needs and synchronizing design, development, and marketing workstreams. Selected for the
+              - strong [ref=e154]: SIAP 2025 Acceleration Program
+              - text: by Kementerian Ekonomi Kreatif.
+        - listitem [ref=e155]:
+          - generic [ref=e156]: Sep 2024 — Jan 2026
+          - generic [ref=e157]:
+            - heading "Research Assistant · Hardware & Embedded System Lab, Telkom University" [level=3] [ref=e158]
+            - paragraph [ref=e159]:
+              - text: Supported research across Embedded Systems, AI, and IoT — sensor data acquisition, experimental validation, and technical documentation. Led end-to-end IoT deployment for water-monitoring and flood-detection impacting
+              - strong [ref=e160]: ~300 households
+              - text: ", and redesigned a BUMDes–PDAM administrative workflow into a user-centered web platform."
+        - listitem [ref=e161]:
+          - generic [ref=e162]: Jul 2025 — Aug 2025
+          - generic [ref=e163]:
+            - heading "Backend Engineer Intern · AI Surveillance Dashboard" [level=3] [ref=e164]
+            - paragraph [ref=e165]: Built backend services, robust data pipelines, and RESTful API endpoints for an AI surveillance dashboard. Coordinated cross-functional teams and monitored performance metrics to keep uptime steady through deployment.
+        - listitem [ref=e166]:
+          - generic [ref=e167]: 2024 — 2025
+          - generic [ref=e168]:
+            - heading "Unit Head / Dorm Manager · DKM Syamsul ’Ulum" [level=3] [ref=e169]
+            - paragraph [ref=e170]: Managed the daily operations and welfare of mosque-dormitory residents — coordinating duty rosters, maintaining stakeholder relations, and keeping a large community running smoothly.
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - generic [ref=e173]: "04"
+        - heading "Currently Building" [level=2] [ref=e174]
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - figure [ref=e177]
+          - figure [ref=e178]
+        - generic [ref=e179]:
+          - img "Plus The Site" [ref=e181]
+          - generic [ref=e182]: SIAP 2025 · Kemenekraf
+          - heading "Plus The Site" [level=3] [ref=e184]
+          - paragraph [ref=e185]:
+            - text: A digital-platform startup selected for the
+            - strong [ref=e186]: SIAP 2025 Acceleration Program
+            - text: by Kementerian Ekonomi Kreatif. As co-founder, I direct end-to-end platform development — aligning the product roadmap with market needs and synchronizing design, engineering, and marketing into one rhythm.
+          - list [ref=e187]:
+            - listitem [ref=e188]:
+              - generic [ref=e189]: Co-Founder
+              - text: Strategy & Product
+            - listitem [ref=e190]:
+              - generic [ref=e191]: Full-Stack
+              - text: Build & Ship
+            - listitem [ref=e192]:
+              - generic [ref=e193]: SIAP ’25
+              - text: Accelerated
+          - link "Visit plusthe.site" [ref=e194] [cursor=pointer]:
+            - /url: https://www.plusthe.site
+            - text: Visit plusthe.site
+            - img [ref=e195]
+        - figure [ref=e198]
+    - generic [ref=e199]:
+      - generic [ref=e200]:
+        - generic [ref=e201]: "05"
+        - heading "Selected Projects" [level=2] [ref=e202]
+      - generic [ref=e203]:
+        - article [ref=e204]:
+          - generic [ref=e205]:
+            - heading "Qoffea — AyoBerAKSI 2025" [level=3] [ref=e206]
+            - generic [ref=e207]: Sep–Nov 2025
+          - paragraph [ref=e208]:
+            - text: Backend engineer for an AI coffee-assessment platform (qoffea.cloud) by PT Telkom Indonesia.
+            - strong [ref=e209]: Top 50 national finalist.
+          - list [ref=e210]:
+            - listitem [ref=e211]: Python
+            - listitem [ref=e212]: AI
+            - listitem [ref=e213]: Backend
+        - article [ref=e214]:
+          - generic [ref=e215]:
+            - heading "AI Surveillance Dashboard" [level=3] [ref=e216]
+            - generic [ref=e217]: Jul–Aug 2025
+          - paragraph [ref=e218]: Backend for an AI surveillance system supporting real-time video analytics and alert pipelines.
+          - list [ref=e219]:
+            - listitem [ref=e220]: Python
+            - listitem [ref=e221]: Data Pipelines
+            - listitem [ref=e222]: REST API
+        - article [ref=e223]:
+          - generic [ref=e224]:
+            - heading "Dashboard MSU" [level=3] [ref=e225]
+            - generic [ref=e226]: Nov 2025–Jan 2026
+          - paragraph [ref=e227]: Full-stack dashboard ecosystem for a mosque & university, architected around a centralized admin control page.
+          - list [ref=e228]:
+            - listitem [ref=e229]: Next.js
+            - listitem [ref=e230]: PostgreSQL
+        - article [ref=e231]:
+          - generic [ref=e232]:
+            - heading "Rewana — Innovillage" [level=3] [ref=e233]
+            - generic [ref=e234]: Oct 2023–Feb 2024
+          - paragraph [ref=e235]: IoT flood early-warning & water-clarity monitoring deployed in Desa Mukai Tengah, Kerinci. Top 163 National Finalist, ~300 households served.
+          - list [ref=e236]:
+            - listitem [ref=e237]: C++
+            - listitem [ref=e238]: IoT / HES
+            - listitem [ref=e239]: PHP
+        - article [ref=e240]:
+          - generic [ref=e241]:
+            - heading "BUMDes–PDAM Platform" [level=3] [ref=e242]
+            - generic [ref=e243]: 2024–2025
+          - paragraph [ref=e244]: User-centered admin web platform digitizing water-payment management and BUMDes operational workflows.
+          - list [ref=e245]:
+            - listitem [ref=e246]: Web
+            - listitem [ref=e247]: Admin System
+        - article [ref=e248]:
+          - generic [ref=e249]:
+            - heading "Tel-U Great Planner" [level=3] [ref=e250]
+            - generic [ref=e251]: Jun 2025
+          - paragraph [ref=e252]: Academic-planning app with GPA computation and predictive grade projections. Registered copyright (No. 000925616).
+          - list [ref=e253]:
+            - listitem [ref=e254]: Algorithms
+            - listitem [ref=e255]: Copyright ©
+    - generic [ref=e256]:
+      - generic [ref=e257]:
+        - generic [ref=e258]: "06"
+        - heading "Research" [level=2] [ref=e259]
+      - article [ref=e260]:
+        - generic [ref=e261]:
+          - generic [ref=e262]: IEEE Published · 2025
+          - generic [ref=e264]: Peer-Reviewed · IEEE Conference
+        - heading "Comparative Analysis of Gaussian Mixture Model and Monte Carlo in Synthetic Data Generation for Durian Cultivation Based on Smart-Farming IoT" [level=3] [ref=e265]:
+          - text: Comparative Analysis of
+          - emphasis [ref=e266]: Gaussian Mixture Model
+          - text: and
+          - emphasis [ref=e267]: Monte Carlo
+          - text: in Synthetic Data Generation for Durian Cultivation Based on Smart-Farming IoT
+        - blockquote [ref=e268]:
+          - generic [ref=e269]: Abstract
+          - text: A Monte Carlo-based synthetic-data framework for durian cultivation within a smart-farming IoT ecosystem. By simulating environmental variables and crop-growth patterns, it tackles the scarcity of real-world agricultural datasets in tropical regions — integrating IoT sensor data with stochastic modeling to produce high-quality synthetic datasets for training precision-agriculture ML models.
+        - list [ref=e270]:
+          - listitem [ref=e271]:
+            - generic [ref=e272]: GMM + Monte Carlo
+            - text: Dual-method analysis
+          - listitem [ref=e273]:
+            - generic [ref=e274]: Smart Farming
+            - text: IoT application
+          - listitem [ref=e275]:
+            - generic [ref=e276]: Synthetic Data
+            - text: AI / ML training
+        - link "View on IEEE Xplore" [ref=e277] [cursor=pointer]:
+          - /url: https://ieeexplore.ieee.org/document/11295988
+          - text: View on IEEE Xplore
+          - img [ref=e278]
+    - generic [ref=e280]:
+      - generic [ref=e281]:
+        - generic [ref=e282]: "07"
+        - heading "Skills & Tools" [level=2] [ref=e283]
+      - generic [ref=e284]:
+        - generic [ref=e285]:
+          - heading "Technical & Development" [level=3] [ref=e286]
+          - list [ref=e287]:
+            - listitem [ref=e288]: Python
+            - listitem [ref=e289]: SQL · PostgreSQL
+            - listitem [ref=e290]: Machine Learning
+            - listitem [ref=e291]: Data Pipelines
+            - listitem [ref=e292]: AI & IoT Systems
+            - listitem [ref=e293]: C++
+            - listitem [ref=e294]: Next.js
+            - listitem [ref=e295]: PHP
+            - listitem [ref=e296]: Golang
+            - listitem [ref=e297]: Embedded Systems
+        - generic [ref=e298]:
+          - heading "Management & Strategy" [level=3] [ref=e299]
+          - list [ref=e300]:
+            - listitem [ref=e301]: Business Development
+            - listitem [ref=e302]: Project Management
+            - listitem [ref=e303]: External Relations
+            - listitem [ref=e304]: Leadership
+            - listitem [ref=e305]: Agile / Sprint Planning
+            - listitem [ref=e306]: Public Relations
+    - generic [ref=e307]:
+      - generic [ref=e308]:
+        - generic [ref=e309]: "08"
+        - heading "Education & Honors" [level=2] [ref=e310]
+      - generic [ref=e311]:
+        - generic [ref=e312]:
+          - generic [ref=e313]:
+            - heading "Universitas Telkom" [level=3] [ref=e314]
+            - generic [ref=e315]: B.Eng Information Technology · GPA 3.80/4.00 · Sep 2022 – Jan 2026
+            - paragraph [ref=e316]: Bank Indonesia Scholarship Awardee (2024–2026) · Innovillage National Finalist (2023) · Gemastik 2025 participant.
+          - generic [ref=e317]:
+            - heading "MAN Insan Cendekia Jambi" [level=3] [ref=e318]
+            - generic [ref=e319]: Natural Science · Final Grade 93.00/100
+            - paragraph [ref=e320]: Provincial Finalist — National Science Olympiad (Astronomy).
+          - heading "Certifications" [level=3] [ref=e321]
+          - list [ref=e322]:
+            - listitem [ref=e323]:
+              - generic [ref=e324]: "2025"
+              - text: Computer Program Copyright — “Tel-U Great Planner” (Reg. 000925616), Ministry of Law RI
+            - listitem [ref=e325]:
+              - generic [ref=e326]: "2024"
+              - text: BNSP Digital Marketing Certification
+            - listitem [ref=e327]:
+              - generic [ref=e328]: —
+              - text: Introduction to Generative AI — Google
+        - generic [ref=e329]:
+          - heading "Awards & Recognition" [level=3] [ref=e330]
+          - list [ref=e331]:
+            - listitem [ref=e332]:
+              - generic [ref=e333]:
+                - heading "Bank Indonesia Scholarship" [level=4] [ref=e334]
+                - generic [ref=e335]: 2024–26
+              - paragraph [ref=e336]: National academic-excellence & leadership scholarship — one of Indonesia’s most competitive.
+            - listitem [ref=e337]:
+              - generic [ref=e338]:
+                - heading "Innovillage Finalist" [level=4] [ref=e339]
+                - generic [ref=e340]: "2023"
+              - paragraph [ref=e341]: Top 163 National Finalist for IoT water-monitoring & flood detection in Kerinci, Jambi (~300 households served).
+            - listitem [ref=e342]:
+              - generic [ref=e343]:
+                - heading "Top 50 — AyoBerAKSI 2025" [level=4] [ref=e344]
+                - generic [ref=e345]: "2025"
+              - paragraph [ref=e346]: National finalist for Qoffea, an IoT + AI coffee quality-assessment innovation.
+            - listitem [ref=e347]:
+              - generic [ref=e348]:
+                - heading "National Science Olympiad" [level=4] [ref=e349]
+                - generic [ref=e350]: "2021"
+              - paragraph [ref=e351]: Provincial finalist in Astronomy (KSN) — strong analytical & scientific aptitude.
+    - generic [ref=e352]:
+      - generic [ref=e353]:
+        - generic [ref=e354]: "09"
+        - heading "Organizational Leadership" [level=2] [ref=e355]
+      - list [ref=e356]:
+        - listitem [ref=e357]:
+          - generic [ref=e358]: 2025–2026
+          - heading "External Coordinator" [level=3] [ref=e359]
+          - generic [ref=e360]: Hardware & Embedded System Lab
+        - listitem [ref=e361]:
+          - generic [ref=e362]: 2025–2026
+          - heading "Advisory Board" [level=3] [ref=e363]
+          - generic [ref=e364]: GenBI · Generasi Baru Indonesia
+        - listitem [ref=e365]:
+          - generic [ref=e366]: 2024–2025
+          - heading "Public Relations Staff" [level=3] [ref=e367]
+          - generic [ref=e368]: GenBI · Generasi Baru Indonesia
+        - listitem [ref=e369]:
+          - generic [ref=e370]: 2024–2025
+          - heading "Unit Head" [level=3] [ref=e371]
+          - generic [ref=e372]: Unit Asrama Masjid Syamsul ’Ulum
+        - listitem [ref=e373]:
+          - generic [ref=e374]: Jul–Sep 2024
+          - heading "Chief Officer" [level=3] [ref=e375]
+          - generic [ref=e376]: PMB I-FEST · Al-Fath
+        - listitem [ref=e377]:
+          - generic [ref=e378]: 2023–2024
+          - heading "Head of Ramadhan Dept." [level=3] [ref=e379]
+          - generic [ref=e380]: PRADA 1445 H · DKM Syamsul ’Ulum
+    - generic [ref=e382]:
+      - generic [ref=e383]: "10"
+      - heading "Let’s build something thoughtful." [level=2] [ref=e384]:
+        - text: Let’s build something
+        - emphasis [ref=e385]: thoughtful
+        - text: .
+      - paragraph [ref=e386]: Open to data science, AI, and backend roles — and to collaborations that turn data into real-world impact.
+      - link "rifqisigwannugraha@gmail.com" [ref=e387] [cursor=pointer]:
+        - /url: mailto:rifqisigwannugraha@gmail.com
+      - list [ref=e388]:
+        - listitem [ref=e389]:
+          - link "+62 822 4632 6670" [ref=e390] [cursor=pointer]:
+            - /url: tel:+6282246326670
+        - listitem [ref=e391]:
+          - link "LinkedIn" [ref=e392] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/rifqi-sigwan-nugraha
+        - listitem [ref=e393]:
+          - link "@rfqsn_" [ref=e394] [cursor=pointer]:
+            - /url: https://instagram.com/rfqsn_
+  - contentinfo [ref=e395]:
+    - generic [ref=e396]: © 2026 Rifqi Sigwan Nugraha
+    - generic [ref=e397]: Designed & built with care · Bandung, ID

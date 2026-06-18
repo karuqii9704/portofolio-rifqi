@@ -32,9 +32,6 @@ html[data-theme="dark"] {
   --accent-2: #c9b187;
   --accent-soft: rgba(132, 170, 182, 0.14);
   --shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.75);
-  --orb-1: rgba(72, 110, 124, 0.40);
-  --orb-2: rgba(120, 100, 70, 0.22);
-  --orb-3: rgba(60, 84, 100, 0.34);
   --grain-op: 0.05;
   color-scheme: dark;
 }
@@ -54,9 +51,6 @@ html[data-theme="light"] {
   --accent-2: #9a7c4c;
   --accent-soft: rgba(70, 107, 120, 0.10);
   --shadow: 0 28px 60px -34px rgba(40, 55, 62, 0.40);
-  --orb-1: rgba(150, 184, 196, 0.55);
-  --orb-2: rgba(210, 190, 150, 0.50);
-  --orb-3: rgba(168, 196, 210, 0.50);
   --grain-op: 0.04;
   color-scheme: light;
 }
@@ -88,35 +82,6 @@ em { font-style: italic; }
    edge would slice the blurred orbs into a hard horizontal seam. Letting them
    overflow keeps the parallax but removes the seam (orbs blur off naturally). */
 .bg-mist { position: fixed; inset: 0; z-index: -2; pointer-events: none; }
-/* Organic blobs. Each has a FIXED asymmetric shape; we animate transform only
-   (rotate + drift + scale) so the expensive blur is rasterized once and cached
-   on the GPU — the rotating asymmetric silhouette reads as a gentle morph,
-   without repainting every frame. */
-.orb {
-  position: absolute;
-  filter: blur(64px); opacity: 0.82;
-  transition: background var(--t);
-  will-change: transform; transform: translateZ(0);
-  backface-visibility: hidden;
-}
-.orb-1 { width: 46vw; height: 46vw; top: -12vw; left: -10vw; background: var(--orb-1); border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%; animation: drift1 32s ease-in-out infinite; }
-.orb-2 { width: 38vw; height: 38vw; top: 32vh; right: -12vw; background: var(--orb-2); border-radius: 60% 40% 47% 53% / 55% 48% 52% 45%; animation: drift2 40s ease-in-out infinite; }
-.orb-3 { width: 42vw; height: 42vw; bottom: -16vw; left: 22vw; background: var(--orb-3); border-radius: 50% 50% 38% 62% / 58% 42% 58% 42%; animation: drift3 36s ease-in-out infinite; }
-@keyframes drift1 {
-  0%   { transform: translate3d(0,0,0) rotate(0deg) scale(1); }
-  50%  { transform: translate3d(5vw,5vh,0) rotate(180deg) scale(1.12); }
-  100% { transform: translate3d(0,0,0) rotate(360deg) scale(1); }
-}
-@keyframes drift2 {
-  0%   { transform: translate3d(0,0,0) rotate(0deg) scale(1); }
-  50%  { transform: translate3d(-6vw,-4vh,0) rotate(-180deg) scale(1.1); }
-  100% { transform: translate3d(0,0,0) rotate(-360deg) scale(1); }
-}
-@keyframes drift3 {
-  0%   { transform: translate3d(0,0,0) rotate(0deg) scale(1); }
-  50%  { transform: translate3d(4vw,-6vh,0) rotate(160deg) scale(1.14); }
-  100% { transform: translate3d(0,0,0) rotate(360deg) scale(1); }
-}
 
 /* cheap static film grain — tiled, no blend mode, rasterized once */
 .grain {
@@ -124,34 +89,6 @@ em { font-style: italic; }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 120px 120px; opacity: var(--grain-op);
 }
-@media (prefers-reduced-motion: reduce) { .orb { animation: none !important; } }
-
-/* ---------- Morphing blob layer ---------- */
-/* Own fixed layer above the orbs, below content. Always animating via JS,
-   so the page never scrolls down into flat black. */
-.morph-layer {
-  position: fixed; inset: 0; z-index: -1;
-  pointer-events: none; overflow: hidden;
-}
-.morph-layer svg { width: 100%; height: 100%; display: block; overflow: visible; }
-/* Light blur only smooths the gradient; the soft radial fill already
-   fades to transparent, so there is no hard edge / seam. */
-.morph-a, .morph-b, .morph-c { filter: blur(14px); }
-.morph-a { opacity: 0.85; }
-.morph-b { opacity: 0.75; }
-.morph-c { opacity: 0.70; }
-.drift-1 { opacity: 0.80; filter: blur(6px); }
-.drift-2 { opacity: 0.70; filter: blur(6px); }
-
-/* Gradient stops — soft core → transparent edge. Theme-aware. */
-.gst-accent.s0 { stop-color: var(--accent);   stop-opacity: 0.34; }
-.gst-accent.s1 { stop-color: var(--accent);   stop-opacity: 0.16; }
-.gst-accent.s2 { stop-color: var(--accent);   stop-opacity: 0; }
-.gst-gold.s0   { stop-color: var(--accent-2); stop-opacity: 0.30; }
-.gst-gold.s1   { stop-color: var(--accent-2); stop-opacity: 0.13; }
-.gst-gold.s2   { stop-color: var(--accent-2); stop-opacity: 0; }
-
-@media (prefers-reduced-motion: reduce) { .morph-layer { display: none; } }
 
 /* ---------- Scroll progress ---------- */
 .scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 60; background: transparent; }
@@ -306,8 +243,7 @@ main { width: 100%; }
 }
 .portrait-tag .loc { color: var(--text-soft); }
 .portrait-tag .status { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-mut); }
-.portrait-tag .status i { width: 7px; height: 7px; border-radius: 50%; background: #5fb487; box-shadow: 0 0 0 3px rgba(95,180,135,0.2); animation: pulse 2.4s ease-in-out infinite; }
-@keyframes pulse { 50% { opacity: 0.4; } }
+.portrait-tag .status i { width: 7px; height: 7px; border-radius: 50%; background: #5fb487; box-shadow: 0 0 0 3px rgba(95,180,135,0.2); }
 
 /* scroll cue */
 .scroll-cue { position: absolute; left: 50%; bottom: 1rem; transform: translateX(-50%); width: 24px; height: 38px; border: 1px solid var(--line-strong); border-radius: 100px; display: grid; place-items: start center; padding-top: 7px; opacity: 0.7; }
@@ -420,8 +356,9 @@ main { width: 100%; }
 .reveal.in .bars .bar i { width: var(--lvl); }
 
 /* ---------- Currently building — Plus showcase ---------- */
+.building .section-head { justify-content: center; text-align: center; }
 .showcase { display: grid; grid-template-columns: 0.92fr 1.16fr 0.92fr; gap: clamp(1rem, 3vw, 2.5rem); align-items: center; position: relative; }
-.showcase-body { text-align: center; }
+.showcase-body { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .plus-chip { display: inline-block; background: #fdfdfb; padding: 0.6rem 1rem; border-radius: 13px; margin: 0 auto 1.4rem; box-shadow: 0 10px 30px -12px rgba(0,0,0,0.4); border: 1px solid rgba(0,0,0,0.06); }
 .plus-logo { height: clamp(26px, 3.4vw, 34px); width: auto; display: block; }
 .showcase-body .badge { margin-bottom: 1.1rem; }
@@ -435,16 +372,12 @@ main { width: 100%; }
 
 .showcase-imgs { display: flex; flex-direction: column; gap: 1.4rem; }
 .showcase-imgs.right { align-items: center; }
-.ph { margin: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); aspect-ratio: 3 / 4; width: 100%; max-width: 220px; transition: transform 0.55s var(--ease); animation: floaty 8s ease-in-out infinite; }
+.ph { margin: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); aspect-ratio: 3 / 4; width: 100%; max-width: 220px; transition: transform 0.55s var(--ease); }
 .ph img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.95); }
 .ph-a { transform: rotate(-6deg); align-self: flex-end; }
 .ph-b { transform: rotate(5deg); align-self: flex-start; margin-top: -0.6rem; }
-.ph-c { transform: rotate(6deg); }
-.ph-b { animation-delay: -2.7s; }
-.ph-c { animation-delay: -4.3s; max-width: 240px; }
+.ph-c { transform: rotate(6deg); max-width: 240px; }
 .ph:hover { transform: rotate(0deg) scale(1.04); }
-@keyframes floaty { 50% { translate: 0 -12px; } }
-@media (prefers-reduced-motion: reduce) { .ph { animation: none; } }
 
 /* ---------- Publication (paper) ---------- */
 .paper { background: color-mix(in srgb, var(--surface) 80%, transparent); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.8rem, 4vw, 3rem); position: relative; overflow: hidden; }
