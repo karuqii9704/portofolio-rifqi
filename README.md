@@ -10,9 +10,9 @@ python -m http.server 5500
 
 Then open `http://localhost:5500`.
 
-## Remaining release blocker
+## Release status
 
-`#testimonials` is `hidden` and marked `pending-approved-quote`. Remove `hidden` only after both contributors approve the exact quote, attribution, relationship description, and verification link.
+The public portfolio contains no testimonial section or placeholder quotes. The candidate chose to apply without testimonials rather than publish an unapproved or fabricated endorsement.
 
 ## Evidence notes
 
@@ -42,4 +42,4 @@ sitemap.xml             Canonical public URL
 - Open every external link in a private browser session.
 - Confirm the CV asset exists and extracts to selectable text.
 - Confirm no high/critical dependency or secret-scanning findings in linked repositories.
-- Keep all unverified projects and testimonials visibly pending or hidden.
+- Keep every unverified project claim out of the public release.
