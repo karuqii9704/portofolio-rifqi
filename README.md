@@ -18,7 +18,7 @@ Then open `http://localhost:5500`.
 
 - NALAR is labelled as a prototype using synthetic data. Its public demo and repository are linked.
 - The mobile incident is anonymised and contains no client source, identifiers, screenshots, or raw logs.
-- Protein RADAR is explicitly described as a team build and Rifqi as project lead, not sole author.
+- Protein RADAR is explicitly described as a team build and Rifqi as project lead, not sole author. Only the live app is linked; its team repository remains unlinked until historical configuration findings can be resolved with collaborators.
 - Qoffea links only to source because its former deployment is retired.
 - CareCanvas links to a verified deterministic public demo and repository. Its Claude, fal.ai, Supabase, and Inngest paths are accurately described as environment-gated production-mode adapters; paid-provider execution is not claimed.
 - The Shariah Trading Assistant links to its sanitised public repository after 24 tests and a frontend production build passed.
