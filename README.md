@@ -1,6 +1,6 @@
-# Rifqi Sigwan Nugraha — Evidence-first portfolio
+# Rifqi Sigwan Nugraha — Editorial evidence portfolio
 
-A dependency-free static portfolio tailored to full-stack AI development and pipeline-debugging roles. The site prioritises shipped work, incident reasoning, verification, and honest project status over generic skill claims.
+A dependency-free static portfolio tailored to full-stack AI development and pipeline-debugging roles. It combines the original calm editorial identity—Fraunces typography, warm-paper/charcoal themes, portrait-led composition, and restrained motion—with recruiter-readable product evidence.
 
 ## Run locally
 
@@ -27,12 +27,22 @@ The public portfolio contains no testimonial section or placeholder quotes. The 
 
 ```text
 index.html              Semantic content, metadata, and structured data
-assets/css/styles.css   Responsive visual system and print rules
-assets/js/main.js       Accessible mobile navigation and current year
-assets/img/             Existing profile imagery
+assets/css/styles.css   Dual-theme visual system, reflow, motion, and print rules
+assets/js/main.js       Theme, accessible navigation, reveal, and scroll state
+assets/js/music.js      User-initiated generative ambient sound
+assets/fonts/           Self-hosted Latin font subsets for fast first paint
+assets/img/             Profile and real product-preview imagery
 robots.txt              Search crawler policy
 sitemap.xml             Canonical public URL
 ```
+
+## Verified UI baseline
+
+- No horizontal overflow at 320, 390, or 1440 CSS pixels.
+- Keyboard menu opens on its first link and returns focus to the trigger on Escape.
+- Reduced-motion mode removes reveal/parallax motion.
+- Local Lighthouse baseline: 91 Performance, 100 Accessibility, 100 Best Practices, and 100 SEO.
+- HTML validation passes with no errors.
 
 ## Pre-deploy checklist
 

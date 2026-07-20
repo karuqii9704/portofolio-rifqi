@@ -8,3 +8,5 @@ docs
 CLAUDE.md
 README.md
 .gitignore
+.playwright-mcp
+hero.png

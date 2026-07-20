@@ -12,3 +12,7 @@ CLAUDE.md
 Thumbs.db
 *.log
 .env*.local
+
+# Local visual-QA artifacts
+.playwright-mcp/
+hero.png
