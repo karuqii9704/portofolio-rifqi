@@ -1,6 +1,6 @@
 # Rifqi Sigwan Nugraha — Editorial evidence portfolio
 
-A dependency-free static portfolio tailored to full-stack AI development and pipeline-debugging roles. It combines the original calm editorial identity—Fraunces typography, warm-paper/charcoal themes, portrait-led composition, and restrained motion—with recruiter-readable product evidence.
+A dependency-free static portfolio for Rifqi's full-stack AI work. It combines a calm editorial identity—Fraunces typography, warm-paper/charcoal themes, portrait-led composition, and restrained motion—with auditable product evidence.
 
 ## Run locally
 
@@ -9,10 +9,6 @@ python -m http.server 5500
 ```
 
 Then open `http://localhost:5500`.
-
-## Release status
-
-The public portfolio contains no testimonial section or placeholder quotes. The candidate chose to apply without testimonials rather than publish an unapproved or fabricated endorsement.
 
 ## Evidence notes
 
