@@ -896,11 +896,17 @@ ol {
   line-height: 1.02;
 }
 
-.section-head > div > p:last-child {
+.section-head > div > h2 ~ p {
   max-width: 42rem;
   margin-top: 1.15rem;
   color: var(--text-soft);
   font-size: 0.96rem;
+}
+
+.section-head > div > h2 ~ p ~ p {
+  margin-top: 0.7rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 /* Projects */
@@ -1101,6 +1107,19 @@ ol {
   display: block;
 }
 
+/* ponytail: raw screenshots end mid-element; fade instead of re-cutting assets */
+.product-preview::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4.5rem;
+  background: linear-gradient(to top, var(--surface-strong), transparent);
+  pointer-events: none;
+}
+
 .product-preview img {
   display: block;
   width: 100%;
@@ -1115,6 +1134,7 @@ ol {
 
 .product-preview figcaption {
   position: absolute;
+  z-index: 2;
   right: 0.75rem;
   bottom: 0.75rem;
   padding: 0.45rem 0.65rem;
@@ -1724,8 +1744,22 @@ ol {
 
 /* Responsive */
 @media (max-width: 72rem) {
+  /* ponytail: chips overlap portrait caption between 50-69rem; park below card */
+  .hero-portrait {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+    gap: 0.6rem;
+  }
+
+  .portrait-card {
+    grid-column: 1 / -1;
+  }
+
+  .proof-one,
+  .proof-two,
   .proof-three {
-    right: -0.6rem;
+    position: static;
+    min-width: 0;
   }
 
   .fit-inner {
