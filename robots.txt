@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portofolio-rifqi-rho.vercel.app/sitemap.xml
+Sitemap: https://www.rifqisigwannugraha.id/sitemap.xml

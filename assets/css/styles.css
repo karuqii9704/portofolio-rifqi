@@ -1699,6 +1699,10 @@ ol {
   color: var(--text-soft);
 }
 
+.footer a + a {
+  margin-left: 1.4rem;
+}
+
 /* Reveal motion */
 .reveal {
   opacity: 1;
