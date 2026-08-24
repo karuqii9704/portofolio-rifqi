@@ -16,3 +16,5 @@ Thumbs.db
 # Local visual-QA artifacts
 .playwright-mcp/
 hero.png
+
+audit/
