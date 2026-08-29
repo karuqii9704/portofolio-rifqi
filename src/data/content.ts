@@ -155,93 +155,179 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-/** Row one of the marquee: Rifqi's own work. */
-export type MarqueeItem =
-  | { kind: 'image'; src: string; alt: string }
-  | { kind: 'tile'; name: string; meta: string; tech: string; tone: number };
-
-export const OWN_WORK: MarqueeItem[] = [
-  { kind: 'image', src: '/assets/img/carecanvas-desktop.png', alt: 'CareCanvas' },
-  { kind: 'image', src: '/assets/img/nalar-desktop.png', alt: 'NALAR' },
-  {
-    kind: 'tile',
-    name: 'Dashboard MSU',
-    meta: 'Nov 2025 — Jan 2026',
-    tech: 'Next.js · PostgreSQL',
-    tone: 0,
-  },
-  {
-    kind: 'tile',
-    name: 'Sigwan ATK POS',
-    meta: 'Jan — Apr 2026',
-    tech: 'PHP · JavaScript',
-    tone: 1,
-  },
-  {
-    kind: 'tile',
-    name: 'Qoffea',
-    meta: 'Ayo Beraksi 2025 · PT Telkom Indonesia',
-    tech: 'Python · Data pipelines',
-    tone: 2,
-  },
-  {
-    kind: 'tile',
-    name: 'AI Surveillance Dashboard',
-    meta: 'Jul — Aug 2025',
-    tech: '10+ CV models over WebSocket',
-    tone: 3,
-  },
-  {
-    kind: 'tile',
-    name: 'Tel-U Great Planner',
-    meta: 'Copyright No. 000925616',
-    tech: 'Academic planning · GPA projection',
-    tone: 0,
-  },
-  {
-    kind: 'tile',
-    name: 'Rewana',
-    meta: 'Innovillage · Top 163 National Finalist',
-    tech: 'C++ · IoT · PHP',
-    tone: 1,
-  },
-  {
-    kind: 'image',
-    src: '/assets/img/carecanvas-mobile.png',
-    alt: 'CareCanvas mobile',
-  },
-  {
-    kind: 'tile',
-    name: 'Shariah Trading Assistant',
-    meta: 'Public repository',
-    tech: '24 tests · production build',
-    tone: 2,
-  },
-  {
-    kind: 'tile',
-    name: 'Protein RADAR',
-    meta: 'Team build · project lead',
-    tech: 'Live application',
-    tone: 3,
-  },
-];
-
 /**
- * Row two of the marquee is ambient motion reference, not Rifqi's work — the
- * section labels it as such so the two rows are never read as one portfolio.
+ * Every tile in the work marquee is Rifqi's own build. Each entry carries the
+ * year and stack on the tile itself, a one-line summary on hover, and the full
+ * write-up plus a link in the detail dialog.
  */
-export const MOTION_REFERENCES = [
-  'https://motionsites.ai/assets/hero-designpro-preview-D8c5_een.gif',
-  'https://motionsites.ai/assets/hero-stellar-ai-preview-D3HL6bw1.gif',
-  'https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif',
-  'https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif',
-  'https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif',
-  'https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif',
-  'https://motionsites.ai/assets/hero-planet-orbit-preview-DWAP8Z1P.gif',
-  'https://motionsites.ai/assets/hero-new-era-preview-CocuDUm9.gif',
-  'https://motionsites.ai/assets/hero-wealth-preview-B70idl_u.gif',
-  'https://motionsites.ai/assets/hero-luminex-preview-CxOP7ce6.gif',
-  'https://motionsites.ai/assets/hero-celestia-preview-0yO3jXO8.gif',
+export type WorkItem = {
+  id: string;
+  name: string;
+  year: string;
+  context: string;
+  stack: string[];
+  summary: string;
+  description: string;
+  href?: string;
+  linkLabel?: string;
+  image?: { src: string; alt: string };
+  tone?: number;
+  /** Stated where the work has a boundary a reader should know about. */
+  note?: string;
+};
+
+export const WORK: WorkItem[] = [
+  {
+    id: 'carecanvas',
+    name: 'CareCanvas',
+    year: '2026',
+    context: 'Flagship · public demo',
+    stack: ['Next.js 16', 'TypeScript', 'Claude', 'fal.ai Flux', 'Supabase', 'Inngest'],
+    summary: 'Human-gated AI illustration pipeline with an auditable trace.',
+    description:
+      'An AI prototype that turns a visual brief into a child-appropriate illustration through bounded agents, an explicit human approval gate, durable execution, and a trace a reviewer can debug. Explicit state transitions, Inngest approval waits, Claude and Flux adapters, owner-scoped Supabase RLS, and raw-body Ed25519 webhook verification. 19 of 19 automated tests pass.',
+    note: 'The public demo runs deterministic local adapters and makes zero external provider calls. Live Claude, fal.ai, Inngest, and Supabase paths stay environment-gated.',
+    href: 'https://carecanvas.vercel.app',
+    linkLabel: 'Run public demo',
+    image: { src: '/assets/img/carecanvas-desktop.png', alt: 'CareCanvas desktop interface' },
+    tone: 0,
+  },
+  {
+    id: 'nalar',
+    name: 'NALAR',
+    year: '2026',
+    context: 'Live prototype',
+    stack: ['Next.js 16', 'React 19', 'Supabase', 'PostgreSQL', 'Gemini', 'Vitest'],
+    summary: 'Role-based cooperative operations prototype that degrades safely.',
+    description:
+      'A cooperative operations prototype spanning sales, POS, customers, receipt verification, national mapping, and optional grounded AI assistance. Service-role Supabase calls stay behind server APIs, Gemini responses fall back deterministically when the provider is unavailable, and 24 of 24 tests cover forecasting, tamper detection, fail-closed APIs, rate limits, and safe degradation.',
+    note: 'Runs on synthetic portfolio data. Not presented as a production cooperative or a claim of live users.',
+    href: 'https://new-nalar.vercel.app',
+    linkLabel: 'Open live app',
+    image: { src: '/assets/img/nalar-desktop.png', alt: 'NALAR desktop interface' },
+    tone: 1,
+  },
+  {
+    id: 'plus-the-site',
+    name: 'Plus.',
+    year: '2025 — present',
+    context: 'Co-founder · software agency',
+    stack: ['Agency delivery', 'AI product', 'Web', 'Mobile', 'Cloud'],
+    summary: 'The software agency I co-founded, selected for SIAP 2025 by Kemenekraf.',
+    description:
+      'A digital AI agency pairing practical AI implementation with human creative direction for Indonesian businesses: chatbots and customer support, CRM, mobile apps and games, cloud, and marketing, plus Plus. Studio for content and campaign assets. I co-founded it and lead end-to-end platform delivery across design, development, and marketing. Selected for the SIAP 2025 acceleration program by Kementerian Ekonomi Kreatif.',
+    href: 'https://plusthe.site',
+    linkLabel: 'Visit plusthe.site',
+    tone: 2,
+  },
+  {
+    id: 'synthetic-iot',
+    name: 'Synthetic IoT Data',
+    year: '2025',
+    context: 'First-author research · IEEE Xplore',
+    stack: ['Monte Carlo', 'Gaussian mixture models', 'Smart farming', 'IoT'],
+    summary: 'First-author comparative study, indexed on IEEE Xplore.',
+    description:
+      'Comparative analysis of Gaussian mixture models and Monte Carlo simulation for synthetic data generation in durian-cultivation smart-farming IoT systems. Published as first author and indexed internationally on IEEE Xplore as document 11295988.',
+    href: 'https://ieeexplore.ieee.org/document/11295988',
+    linkLabel: 'Read the paper',
+    tone: 3,
+  },
+  {
+    id: 'protein-radar',
+    name: 'Protein RADAR',
+    year: '2026',
+    context: 'Team build · project lead',
+    stack: ['Next.js', 'Prisma', 'PostgreSQL', 'RBAC'],
+    summary: 'Research dashboard over 20+ public data sources, with RBAC and audit logs.',
+    description:
+      'A Next.js and PostgreSQL dashboard integrating more than twenty public data sources, with authentication, role-based access control, and audit logging. I led the project; the build was delivered by a documented team.',
+    href: 'https://protein-radar.vercel.app',
+    linkLabel: 'Open live app',
+    tone: 0,
+  },
+  {
+    id: 'shariah-trading-assistant',
+    name: 'Shariah Trading Assistant',
+    year: '2026',
+    context: 'Public repository',
+    stack: ['Multi-agent orchestration', 'Evidence handling', 'QA gates'],
+    summary: 'Role-scoped multi-agent research system with explicit QA gates.',
+    description:
+      'A role-scoped multi-agent research and analysis system with evidence handling and explicit QA gates between stages. 24 tests and a passing production build.',
+    href: 'https://github.com/karuqii9704/shariah-trading-assistant',
+    linkLabel: 'Inspect source',
+    tone: 1,
+  },
+  {
+    id: 'surveillance-dashboard',
+    name: 'AI Surveillance Dashboard',
+    year: 'Jul — Aug 2025',
+    context: 'Backend engineering · computer vision',
+    stack: ['Python', 'REST API', 'WebSocket', 'Data pipelines'],
+    summary: 'Backend and pipelines behind 10+ computer vision models over WebSocket.',
+    description:
+      'Backend services, data pipelines, and RESTful APIs for real-time video analytics, intelligent alert management, and uptime monitoring, integrating more than ten computer vision models over WebSocket.',
+    tone: 2,
+  },
+  {
+    id: 'dashboard-msu',
+    name: 'Dashboard MSU',
+    year: 'Nov 2025 — Jan 2026',
+    context: 'Full-stack delivery',
+    stack: ['Next.js', 'PostgreSQL'],
+    summary: 'Operational dashboard built end to end, database through interface.',
+    description:
+      'An operational dashboard delivered end to end on Next.js and PostgreSQL: schema design, server APIs, and reporting views built so the people running the operation can read and act on them without an engineer in the room.',
+    tone: 3,
+  },
+  {
+    id: 'sigwan-atk-pos',
+    name: 'Sigwan ATK POS',
+    year: 'Jan — Apr 2026',
+    context: 'Point of sale · retail',
+    stack: ['PHP', 'JavaScript', 'MySQL'],
+    summary: 'Point-of-sale and stock system for a stationery business.',
+    description:
+      'A point-of-sale and inventory system for a stationery retailer, covering transactions, stock movement, and sales reporting, with an admin surface the shop staff operate day to day.',
+    tone: 0,
+  },
+  {
+    id: 'rewana',
+    name: 'Rewana Flood Warning',
+    year: '2023 — 2024',
+    context: 'Production IoT · Desa Mukai Tengah, Kerinci',
+    stack: ['C++', 'Embedded', 'IoT', 'PHP'],
+    summary: 'Solar-powered flood early-warning platform serving around 300 households.',
+    description:
+      'An IoT water-clarity and flood monitoring platform built with Tim Rewana and deployed in Desa Mukai Tengah, Kerinci, serving roughly 300 households. Sensor integration, solar power, and a real-time web dashboard. National finalist in Innovillage two years running, Top 163 nationally.',
+    tone: 1,
+  },
+  {
+    id: 'qoffea',
+    name: 'Qoffea',
+    year: '2025',
+    context: 'Ayo Beraksi 2025 · PT Telkom Indonesia',
+    stack: ['Python', 'Flask', 'YOLO', 'Docker'],
+    summary: 'Coffee-bean assessment workflow built on YOLO inference.',
+    description:
+      'A coffee-bean assessment workflow with Flask, YOLO inference, confidence filtering, non-maximum suppression, API tests, and container configuration, built for Ayo Beraksi 2025 at PT Telkom Indonesia.',
+    note: 'The former deployment is retired. The link points to source evidence only.',
+    href: 'https://github.com/karuqii9704/karuqii9704.github.io',
+    linkLabel: 'Inspect source',
+    tone: 2,
+  },
+  {
+    id: 'great-planner',
+    name: 'Tel-U Great Planner',
+    year: '2025',
+    context: 'Registered copyright · Kemenkumham RI',
+    stack: ['Academic planning', 'GPA projection'],
+    summary: 'Academic planning and GPA projection tool, registered as software copyright.',
+    description:
+      'An academic planning and GPA projection tool for Telkom University students, registered with Kemenkumham RI as “Tel-U Great Planner Academic”, registration number 000925616, in 2025.',
+    tone: 3,
+  },
 ];
 
 export const SOCIALS = [
