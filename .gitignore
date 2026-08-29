@@ -1,3 +1,7 @@
+# Build output & dependencies
+node_modules/
+dist/
+
 # Vercel
 .vercel
 
