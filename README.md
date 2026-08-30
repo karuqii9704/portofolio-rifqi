@@ -1,72 +1,51 @@
-# Rifqi Sigwan Nugraha — Portfolio
+# Rifqi Sigwan Nugraha — Editorial evidence portfolio
 
-A dark, motion-led single-page portfolio for Rifqi's software engineering work.
-Built with Vite, React, TypeScript, Tailwind CSS, Framer Motion, and Lucide React.
+A dependency-free static portfolio for Rifqi's full-stack AI work. It combines a calm editorial identity—Fraunces typography, warm-paper/charcoal themes, portrait-led composition, and restrained motion—with auditable product evidence.
 
 ## Run locally
 
-```bash
-npm install
-npm run dev      # http://localhost:5173
-npm run build    # typecheck + production build into dist/
-npm run preview  # serve the production build
+```powershell
+python -m http.server 5500
 ```
+
+Then open `http://localhost:5500`.
+
+## Evidence notes
+
+- NALAR is labelled as a prototype using synthetic data. Its public demo and repository are linked.
+- The mobile incident is anonymised and contains no client source, identifiers, screenshots, or raw logs.
+- Protein RADAR is explicitly described as a team build and Rifqi as project lead, not sole author. Only the live app is linked; its team repository remains unlinked until historical configuration findings can be resolved with collaborators.
+- Qoffea links only to source because its former deployment is retired.
+- CareCanvas links to a verified deterministic public demo and repository. Its Claude, fal.ai, Supabase, and Inngest paths are accurately described as environment-gated production-mode adapters; paid-provider execution is not claimed.
+- The Shariah Trading Assistant links to its sanitised public repository after 24 tests and a frontend production build passed.
 
 ## Structure
 
 ```text
-index.html                 Vite entry, metadata, structured data, font preloads
-src/App.tsx                Section order
-src/data/content.ts        All copy, projects, services, and links in one place
-src/components/            FadeIn, Magnet, AnimatedText, buttons, WorkTile
-src/sections/              Hero, Marquee, About, Services, Projects, Contact
-public/assets/img/         Portrait and real product-preview imagery
-public/assets/fonts/       Self-hosted Kanit subsets (latin + latin-ext)
-public/assets/decor/       Locally drawn decorative SVGs for the About section
-public/legacy.html         The previous editorial portfolio, kept for reference
-public/privacy.html        Privacy page (served at /privacy)
-public/terms.html          Terms page (served at /terms)
+index.html              Semantic content, metadata, and structured data
+assets/css/styles.css   Dual-theme visual system, reflow, motion, and print rules
+assets/js/main.js       Theme, accessible navigation, reveal, and scroll state
+assets/js/music.js      User-initiated generative ambient sound
+assets/fonts/           Self-hosted Latin font subsets for fast first paint
+assets/img/             Profile and real product-preview imagery
+robots.txt              Search crawler policy
+sitemap.xml             Canonical public URL
 ```
-
-Content lives in `src/data/content.ts`. Editing copy, swapping a project, or
-adding a service should not require touching a component.
-
-## Evidence notes
-
-The claims on this page are kept to what can be checked:
-
-- CareCanvas links to a verified deterministic public demo. Its Claude, fal.ai,
-  Supabase, and Inngest paths are environment-gated production-mode adapters;
-  paid-provider execution is not claimed.
-- NALAR is labelled a prototype and runs on synthetic data.
-- The research card links to the indexed IEEE Xplore record for the
-  synthetic-IoT-data paper, not to any other project.
-- Marquee row one is Rifqi's own work. Row two is third-party motion reference
-  hotlinked from `motionsites.ai` and is labelled as such on the page. Tiles
-  that fail to load are dropped so the row never renders broken images.
-
-## Assets
-
-- The hero portrait is derived from `public/assets/img/profile.jpg` with a
-  spotlight grade and an alpha falloff so it dissolves into the `#0C0C0C`
-  background instead of reading as a photo card.
-- Kanit is self-hosted so first paint does not depend on a third-party font
-  host. Weights 300/400/500/600/900 cover every weight the UI uses.
-- The About section's decorative marks are locally drawn SVGs.
 
 ## Verified UI baseline
 
-- No horizontal overflow at 390 or 1440 CSS pixels.
-- `npm run build` passes with TypeScript in strict mode.
-- `npm audit` reports 0 vulnerabilities.
-- Reduced-motion mode disables the magnetic portrait and collapses transitions.
-- Keyboard focus is visible on every link and button; a skip link precedes the page.
+- No horizontal overflow at 320, 390, or 1440 CSS pixels.
+- Keyboard menu opens on its first link and returns focus to the trigger on Escape.
+- Reduced-motion mode removes reveal/parallax motion.
+- Local Lighthouse baseline: 91 Performance, 100 Accessibility, 100 Best Practices, and 100 SEO.
+- HTML validation passes with no errors.
 
 ## Pre-deploy checklist
 
-- Run `npm run build` and confirm the typecheck passes.
-- Check an accessibility pass at mobile and desktop widths.
+- Validate HTML and CSS.
+- Run an accessibility check at mobile and desktop widths.
 - Test keyboard navigation, focus visibility, 400% reflow, and reduced motion.
 - Open every external link in a private browser session.
 - Confirm the CV asset exists and extracts to selectable text.
+- Confirm no high/critical dependency or secret-scanning findings in linked repositories.
 - Keep every unverified project claim out of the public release.
