@@ -595,10 +595,10 @@ ol {
 
 .hero h1 span {
   display: block;
-  margin-top: 0.14em;
+  margin-top: 0.32em;
   color: var(--accent);
-  font-size: 0.76em;
-  letter-spacing: -0.035em;
+  font-size: 0.5em;
+  letter-spacing: -0.02em;
 }
 
 .hero h1 em {
@@ -633,10 +633,6 @@ ol {
   list-style: none;
   gap: 1.35rem;
   margin-top: 1.7rem;
-}
-
-.mobile-facts {
-  display: none;
 }
 
 .hero-links a {
@@ -728,10 +724,9 @@ ol {
   position: absolute;
   right: 1.1rem;
   bottom: 1rem;
-  left: 1.1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 0.8rem;
   color: #eef1eb;
   font-size: 0.67rem;
@@ -1988,7 +1983,7 @@ ol {
   }
 
   .hero h1 span {
-    font-size: 0.72em;
+    font-size: 0.56em;
   }
 
   .hero-lead {
@@ -2008,39 +2003,10 @@ ol {
     flex-wrap: wrap;
   }
 
-  .mobile-facts {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin-top: 1.35rem;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
 
-  .mobile-facts div {
-    min-width: 0;
-    padding: 0.72rem 0.5rem;
-    border-left: 1px solid var(--line);
-  }
 
-  .mobile-facts div:first-child {
-    padding-left: 0;
-    border-left: 0;
-  }
 
-  .mobile-facts dt {
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
 
-  .mobile-facts dd {
-    margin-top: 0.2rem;
-    font-family: var(--font-serif);
-    font-size: 0.82rem;
-    white-space: nowrap;
-  }
 
   .hero-portrait {
     display: grid;
@@ -2065,37 +2031,25 @@ ol {
     grid-column: 1 / -1;
   }
 
+  /* Three facts in one row on mobile, the layout the removed .mobile-facts
+     strip used to provide. Stack and Work drop out; the rest stay. */
   .availability {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .availability div:nth-child(2),
   .availability div:nth-child(3),
   .availability div:nth-child(4) {
     display: none;
   }
 
-  .availability div:last-child {
-    grid-column: auto;
-  }
-
   .availability div {
-    border-top: 1px solid var(--line);
+    grid-column: auto;
+    padding: 0.85rem 0.5rem;
   }
 
-  .availability div:first-child,
-  .availability div:last-child {
-    border-top: 0;
-  }
-
-  .availability div:nth-child(odd) {
+  .availability div:first-child {
     padding-left: 0;
     border-left: 0;
-  }
-
-  .availability div:last-child {
-    padding-left: 0.5rem;
-    border-left: 1px solid var(--line);
   }
 
   .fit-inner ul {
