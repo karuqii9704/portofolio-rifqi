@@ -1740,6 +1740,139 @@ ol {
   font-size: 0.92rem;
 }
 
+/* Plus The Site: the featured venture card with a brand preview tile */
+.venture {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr);
+  align-items: center;
+  gap: clamp(1.8rem, 4vw, 3.5rem);
+}
+
+.venture-copy > p:not(.card-kicker) {
+  max-width: 34rem;
+  margin-top: 0.9rem;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.venture-copy strong {
+  color: var(--text);
+}
+
+.venture-copy .case-actions {
+  margin-top: 1.5rem;
+}
+
+.venture-preview {
+  --plus-blue: #0b78ec;
+  position: relative;
+  z-index: 1;
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 1rem;
+  background: #ffffff;
+  color: #04101f;
+  box-shadow: var(--shadow);
+  transform: perspective(1200px) rotateY(-3deg) rotateX(1deg);
+  transition: transform 700ms var(--ease), box-shadow 500ms ease;
+}
+
+.venture-preview:hover {
+  transform: perspective(1200px) rotateY(0) rotateX(0) translateY(-5px);
+  box-shadow: 0 30px 80px color-mix(in srgb, var(--plus-blue) 28%, transparent);
+}
+
+.venture-bar {
+  display: flex;
+  height: 2.2rem;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0 0.75rem;
+  border-bottom: 1px solid #e6eaf0;
+  background: #f5f7fa;
+}
+
+.venture-bar i {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: #d5dbe3;
+}
+
+.venture-bar span {
+  margin-left: 0.45rem;
+  color: #5b6675;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+}
+
+.venture-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(1.6rem, 4vw, 2.4rem) 1.25rem 1.3rem;
+  background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--plus-blue) 14%, transparent), transparent 62%),
+    #ffffff;
+  text-align: center;
+}
+
+.venture-stage img {
+  display: block;
+  width: min(11rem, 62%);
+  height: auto;
+}
+
+.venture-tagline {
+  margin-top: 1.1rem;
+  font-family: var(--font-sans);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.venture-tagline em {
+  color: var(--plus-blue);
+  font-style: normal;
+}
+
+.venture-sub {
+  margin-top: 0.4rem;
+  color: #5b6675;
+  font-size: 0.74rem;
+}
+
+.venture-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0 1rem 1.3rem;
+}
+
+.venture-services span {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #dfe6ef;
+  border-radius: 999px;
+  background: #f7f9fc;
+  color: #2b3645;
+  font-size: 0.66rem;
+  font-weight: 500;
+}
+
+.inline-link {
+  border-bottom: 1px solid var(--line-strong);
+  transition: border-color 220ms ease;
+}
+
+.inline-link:hover {
+  border-color: var(--accent-warm);
+}
+
 @media (max-width: 62rem) {
   .achievement-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1747,6 +1880,14 @@ ol {
 
   .achievement-featured {
     grid-column: span 2;
+  }
+
+  .venture {
+    grid-template-columns: 1fr;
+  }
+
+  .venture-preview {
+    transform: none;
   }
 }
 
@@ -2559,6 +2700,7 @@ ol {
 
   .product-preview,
   .case-grid-reverse .product-preview,
+  .venture-preview,
   .portrait-card img {
     transform: none;
   }

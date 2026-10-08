@@ -48,7 +48,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-italic-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
   <link rel="preload" as="image" type="image/webp" href="assets/img/profile-480.webp" imagesrcset="assets/img/profile-480.webp 480w, assets/img/profile-optimized.webp 900w" imagesizes="(max-width: 800px) 88vw, 26rem" fetchpriority="high">
-  <link rel="stylesheet" href="assets/css/styles.css?v=19">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20">
   <noscript><style>.reveal,.hero-line>span,.console-body li{opacity:1!important;transform:none!important;animation:none!important}</style></noscript>
 
   <script type="application/ld+json">
@@ -65,6 +65,11 @@
       "addressLocality": "Kerinci Regency",
       "addressRegion": "Jambi",
       "addressCountry": "ID"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Plus The Site",
+      "url": "https://plusthe.site"
     },
     "alumniOf": {
       "@type": "CollegeOrUniversity",
@@ -159,7 +164,7 @@
           </h1>
 
           <p class="hero-lead reveal" data-delay="120">
-            I&rsquo;m <strong>Rifqi Sigwan Nugraha</strong>, a full-stack AI developer from Jambi, Indonesia, and co-founder of <strong>Plus The Site</strong>. I design the pipeline, write the backend, and wire up the tests, so my flagship builds come with a live demo, public source, and passing tests you can check yourself.
+            I&rsquo;m <strong>Rifqi Sigwan Nugraha</strong>, a full-stack AI developer from Jambi, Indonesia, and co-founder of <a class="inline-link" href="https://plusthe.site" target="_blank" rel="noopener noreferrer"><strong>Plus The Site</strong></a>. I design the pipeline, write the backend, and wire up the tests, so my flagship builds come with a live demo, public source, and passing tests you can check yourself.
           </p>
 
           <div class="hero-actions reveal" data-delay="200">
@@ -391,12 +396,30 @@
       </header>
 
       <div class="achievement-grid">
-        <article class="achievement-card achievement-featured reveal spot">
-          <div>
+        <article class="achievement-card achievement-featured venture reveal spot">
+          <div class="venture-copy">
             <p class="card-kicker">Co-founder &middot; 2025&ndash;present</p>
             <h3>Plus The Site</h3>
+            <p>Co-founded <strong>plus.</strong>, a digital AI agency where one team handles AI chatbots, branding, apps, and CRM instead of five separate vendors. I lead across design, development, and marketing, and the agency was selected for the SIAP 2025 acceleration program by Kementerian Ekonomi Kreatif.</p>
+            <div class="case-actions">
+              <a class="button button-primary button-glow" href="https://plusthe.site" target="_blank" rel="noopener noreferrer">
+                Visit plusthe.site
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
           </div>
-          <p>Co-founded a software agency that ships platforms end to end. I lead across design, development, and marketing, and the agency was selected for the SIAP 2025 acceleration program by Kementerian Ekonomi Kreatif.</p>
+
+          <a class="venture-preview" href="https://plusthe.site" target="_blank" rel="noopener noreferrer" aria-label="plus. agency website, plusthe.site (opens in a new tab)">
+            <span class="venture-bar" aria-hidden="true"><i></i><i></i><i></i><span>plusthe.site</span></span>
+            <span class="venture-stage">
+              <img src="assets/img/plus-logo.webp" width="640" height="280" alt="" loading="lazy" decoding="async">
+              <span class="venture-tagline">Build smarter brands. <em>Faster.</em></span>
+              <span class="venture-sub">AI + human creativity &middot; EN / ID</span>
+            </span>
+            <span class="venture-services" aria-hidden="true">
+              <span>AI Chat Bot</span><span>Customer Support</span><span>Mobile App</span><span>CRM Platform</span><span>Digital Agency</span><span>Mobile Game</span>
+            </span>
+          </a>
         </article>
 
         <article class="achievement-card reveal spot" data-delay="60">
