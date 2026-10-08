@@ -163,6 +163,86 @@
   );
   updateScrollState();
 
+  // Pointer spotlight on the hero backdrop and on cards. Fine pointers only,
+  // so touch scrolling never pays for it.
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const hero = document.querySelector(".hero");
+
+  if (finePointer.matches && !reducedMotion.matches) {
+    hero?.addEventListener("pointermove", function (event) {
+      const rect = hero.getBoundingClientRect();
+      hero.style.setProperty("--mx", event.clientX - rect.left + "px");
+      hero.style.setProperty("--my", event.clientY - rect.top + "px");
+    });
+
+    document.querySelectorAll(".spot").forEach(function (card) {
+      card.addEventListener("pointermove", function (event) {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--sx", event.clientX - rect.left + "px");
+        card.style.setProperty("--sy", event.clientY - rect.top + "px");
+      });
+    });
+  }
+
+  // Count the hero stats up from zero the first time they scroll into view.
+  // The final numbers are already in the HTML, so no-JS and reduced motion
+  // simply show them.
+  const counters = Array.from(document.querySelectorAll("[data-count]"));
+  if (counters.length && !reducedMotion.matches && "IntersectionObserver" in window) {
+    const countObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          countObserver.unobserve(entry.target);
+
+          const element = entry.target;
+          const target = Number(element.dataset.count);
+          const duration = 1400;
+          const start = performance.now();
+
+          function tick(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            element.textContent = String(Math.round(target * eased));
+            if (progress < 1) window.requestAnimationFrame(tick);
+          }
+
+          element.textContent = "0";
+          window.requestAnimationFrame(tick);
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    counters.forEach(function (counter) {
+      countObserver.observe(counter);
+    });
+  }
+
+  const copyEmail = document.getElementById("copyEmail");
+  const copyStatus = document.getElementById("copyStatus");
+  let copyReset;
+
+  copyEmail?.addEventListener("click", async function () {
+    const email = copyEmail.dataset.email;
+    const label = copyEmail.querySelector("span");
+    let message = "Copied " + email + " to your clipboard.";
+
+    try {
+      await navigator.clipboard.writeText(email);
+      if (label) label.textContent = "Copied";
+    } catch (error) {
+      message = "Couldn't copy automatically. The address is " + email + ".";
+    }
+
+    if (copyStatus) copyStatus.textContent = message;
+    window.clearTimeout(copyReset);
+    copyReset = window.setTimeout(function () {
+      if (label) label.textContent = "Copy email";
+      if (copyStatus) copyStatus.textContent = "";
+    }, 3200);
+  });
+
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 })();
